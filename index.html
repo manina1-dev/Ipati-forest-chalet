@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ipati Forest Chalet · Υπάτη</title>
+  <meta name="description" content="Ipati Forest Chalet — ένα ζεστό σαλέ στο δάσος της Υπάτης, στους πρόποδες της Οίτης. Κάντε κράτηση μέσω Airbnb.">
+  <meta property="og:title" content="Ipati Forest Chalet">
+  <meta property="og:description" content="Σαλέ στο δάσος της Υπάτης, στους πρόποδες της Οίτης.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 3 4 26h24z' fill='%232f4a3a'/><path d='M16 11 10 24h12z' fill='%23c9a46a'/></svg>">
+</head>
+<body>
+
+<header class="nav" id="top">
+  <a class="brand" href="#top">Ipati <span>Forest Chalet</span></a>
+  <nav class="links" aria-label="Κύριο μενού">
+    <a href="#about" data-i18n="nav.about">Το σαλέ</a>
+    <a href="#gallery" data-i18n="nav.gallery">Φωτογραφίες</a>
+    <a href="#area" data-i18n="nav.area">Η περιοχή</a>
+    <a href="#location" data-i18n="nav.location">Τοποθεσία</a>
+    <a href="#contact" data-i18n="nav.contact">Επικοινωνία</a>
+  </nav>
+  <div class="nav-actions">
+    <button class="lang" id="langToggle" type="button" aria-label="Change language">EN</button>
+    <a class="btn btn-small airbnb-link" href="#" target="_blank" rel="noopener" data-i18n="cta.book">Κράτηση</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-bg" data-photo="hero"></div>
+  <div class="hero-inner">
+    <p class="eyebrow" data-i18n="hero.eyebrow">Υπάτη · Όρος Οίτη</p>
+    <h1 data-i18n="hero.title">Ένα σαλέ μέσα στο δάσος</h1>
+    <p class="lead" data-i18n="hero.lead">Ξύπνα με θέα στο βουνό, περπάτησε στα μονοπάτια της Οίτης και χαλάρωσε στις ιαματικές πηγές — λίγα λεπτά από την πόρτα σου.</p>
+    <div class="hero-cta">
+      <a class="btn airbnb-link" href="#" target="_blank" rel="noopener" data-i18n="cta.checkAvailability">Δες διαθεσιμότητα στο Airbnb</a>
+      <a class="btn btn-ghost" href="#about" data-i18n="cta.more">Μάθε περισσότερα</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="wrap two-col">
+    <div>
+      <p class="eyebrow" data-i18n="about.eyebrow">Το σαλέ</p>
+      <h2 data-i18n="about.title">Ησυχία, ξύλο και πέτρα</h2>
+      <p data-i18n="about.p1">Το Ipati Forest Chalet είναι ένα φιλόξενο σπίτι μέσα στο πράσινο, ιδανικό για ζευγάρια, οικογένειες και παρέες που θέλουν να ξεφύγουν από την πόλη.</p>
+      <p data-i18n="about.p2">Η Γωγώ, η οικοδέσποινά σας, θα φροντίσει να έχετε ό,τι χρειάζεστε και θα σας προτείνει τα καλύτερα μέρη της περιοχής.</p>
+    </div>
+    <ul class="features">
+      <li><span class="ico">⛰</span><span data-i18n="feat.view">Θέα στο βουνό και το δάσος</span></li>
+      <li><span class="ico">♨</span><span data-i18n="feat.springs">Κοντά στα Λουτρά Υπάτης</span></li>
+      <li><span class="ico">🥾</span><span data-i18n="feat.hiking">Μονοπάτια της Οίτης</span></li>
+      <li><span class="ico">🚗</span><span data-i18n="feat.parking">Πάρκινγκ</span></li>
+      <li><span class="ico">📶</span><span data-i18n="feat.wifi">Wi‑Fi</span></li>
+      <li><span class="ico">🍳</span><span data-i18n="feat.kitchen">Πλήρως εξοπλισμένη κουζίνα</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section alt" id="gallery">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="gallery.eyebrow">Φωτογραφίες</p>
+    <h2 data-i18n="gallery.title">Μια ματιά μέσα κι έξω</h2>
+    <div class="gallery" id="galleryGrid"></div>
+  </div>
+</section>
+
+<section class="section" id="area">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="area.eyebrow">Η περιοχή</p>
+    <h2 data-i18n="area.title">Τι να κάνετε γύρω από την Υπάτη</h2>
+    <div class="cards">
+      <article class="card">
+        <h3 data-i18n="area.c1.t">Λουτρά Υπάτης</h3>
+        <p data-i18n="area.c1.d">Ιαματικές πηγές με ζεστά νερά, λίγα χιλιόμετρα από το χωριό — ιδανικές τον χειμώνα.</p>
+      </article>
+      <article class="card">
+        <h3 data-i18n="area.c2.t">Εθνικός Δρυμός Οίτης</h3>
+        <p data-i18n="area.c2.d">Ελατοδάση, αλπικά λιβάδια και σημαδεμένα μονοπάτια για κάθε επίπεδο πεζοπόρου.</p>
+      </article>
+      <article class="card">
+        <h3 data-i18n="area.c3.t">Κάστρο & παλιά Υπάτη</h3>
+        <p data-i18n="area.c3.d">Βόλτα στα πλακόστρωτα του χωριού, στο βυζαντινό κάστρο και στις πλατείες με τα πλατάνια.</p>
+      </article>
+      <article class="card">
+        <h3 data-i18n="area.c4.t">Τοπική κουζίνα</h3>
+        <p data-i18n="area.c4.d">Ταβέρνες με ψητά, τυριά και κρασί της Φθιώτιδας, σε μικρή απόσταση.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="location">
+  <div class="wrap two-col">
+    <div>
+      <p class="eyebrow" data-i18n="loc.eyebrow">Τοποθεσία</p>
+      <h2 data-i18n="loc.title">Πώς θα έρθετε</h2>
+      <ul class="distances">
+        <li><span data-i18n="loc.lamia">Λαμία</span><b data-i18n="loc.lamia.d">~25 λεπτά</b></li>
+        <li><span data-i18n="loc.springs">Λουτρά Υπάτης</span><b data-i18n="loc.springs.d">~10 λεπτά</b></li>
+        <li><span data-i18n="loc.athens">Αθήνα</span><b data-i18n="loc.athens.d">~2,5 ώρες</b></li>
+        <li><span data-i18n="loc.thess">Θεσσαλονίκη</span><b data-i18n="loc.thess.d">~3 ώρες</b></li>
+      </ul>
+      <p class="muted" data-i18n="loc.note">Η ακριβής διεύθυνση δίνεται μετά την κράτηση.</p>
+    </div>
+    <div class="map">
+      <iframe title="Χάρτης Υπάτης" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Ypati,+Greece&z=12&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="section book" id="contact">
+  <div class="wrap center">
+    <h2 data-i18n="contact.title">Έτοιμοι για απόδραση;</h2>
+    <p data-i18n="contact.lead">Δείτε τις διαθέσιμες ημερομηνίες και κάντε κράτηση με ασφάλεια μέσω Airbnb, ή επικοινωνήστε απευθείας με τη Γωγώ.</p>
+    <div class="hero-cta">
+      <a class="btn airbnb-link" href="#" target="_blank" rel="noopener" data-i18n="cta.book.airbnb">Κράτηση στο Airbnb</a>
+      <a class="btn btn-ghost contact-phone" href="#" data-i18n="cta.call">Τηλέφωνο</a>
+      <a class="btn btn-ghost contact-email" href="#" data-i18n="cta.email">Email</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© <span id="year"></span> Ipati Forest Chalet · Υπάτη, Φθιώτιδα</p>
+  <p class="social"><a class="instagram-link" href="#" target="_blank" rel="noopener">Instagram</a></p>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lb-close" type="button" aria-label="Κλείσιμο">×</button>
+  <img alt="">
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
