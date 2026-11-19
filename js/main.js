@@ -45,7 +45,7 @@
     "d.athens": "Athens Airport", "d.thess": "Thessaloniki Airport",
     "loc.note": "The exact location is shared after booking.",
     "contact.title": "Ready for a getaway?",
-    "contact.lead": "See available dates and book securely through Airbnb. Georgia (Gogo) will be happy to welcome you.",
+    "contact.lead": "See available dates and book securely through Airbnb. For questions, message Georgia (Gogo) on WhatsApp or give her a call.",
   };
 
   const nodes = document.querySelectorAll("[data-i18n]");
@@ -70,7 +70,15 @@
   // ---------- Links from config ----------
   document.querySelectorAll(".airbnb-link").forEach((a) => { a.href = C.airbnbUrl || "#"; });
   const phone = document.querySelector(".contact-phone");
-  if (C.phone) phone.href = "tel:" + C.phone.replace(/\s/g, ""); else phone.remove();
+  if (C.phone) {
+    phone.href = "tel:" + C.phone.replace(/\s/g, "");
+    phone.querySelector(".phone-num").textContent = C.phone;
+  } else phone.remove();
+  document.querySelectorAll(".contact-whatsapp").forEach((a) => {
+    if (!C.whatsapp) return a.remove();
+    const msg = "Γεια σας! Ενδιαφέρομαι για το Ipati Forest Chalet.";
+    a.href = "https://wa.me/" + C.whatsapp + "?text=" + encodeURIComponent(msg);
+  });
   const email = document.querySelector(".contact-email");
   if (C.email) email.href = "mailto:" + C.email; else email.remove();
   const ig = document.querySelector(".instagram-link");

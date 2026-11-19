@@ -7,7 +7,8 @@ window.CHALET = {
   airbnbUrl: "https://www.airbnb.gr/rooms/1258574086213162583",
 
   // Στοιχεία επικοινωνίας (αφήστε κενό "" για να κρυφτεί το κουμπί)
-  phone: "",       // π.χ. "+30 69xxxxxxxx"
+  phone: "+30 699 444 9853",
+  whatsapp: "306994449853",   // αριθμός για WhatsApp, χωρίς + και κενά (κενό "" = κρυφό)
   email: "",       // π.χ. "info@ipatichalet.gr"
   instagram: "",   // π.χ. "https://instagram.com/ipatiforestchalet"
 
