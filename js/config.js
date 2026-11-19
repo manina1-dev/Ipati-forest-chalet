@@ -4,7 +4,7 @@
 // ===========================================================
 window.CHALET = {
   // Ο σύνδεσμος της αγγελίας στο Airbnb (π.χ. https://www.airbnb.gr/rooms/123456)
-  airbnbUrl: "https://www.airbnb.gr/",
+  airbnbUrl: "https://www.airbnb.gr/rooms/1258574086213162583",
 
   // Στοιχεία επικοινωνίας (αφήστε κενό "" για να κρυφτεί το κουμπί)
   phone: "",       // π.χ. "+30 69xxxxxxxx"
