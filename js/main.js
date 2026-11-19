@@ -4,7 +4,7 @@
   // ---------- English translations (Greek is the default in the HTML) ----------
   const EN = {
     "nav.about": "The chalet", "nav.gallery": "Photos", "nav.seasons": "Seasons",
-    "nav.area": "The area", "nav.contact": "Book",
+    "nav.area": "The area", "nav.contact": "Contact", "nav.book": "Book",
     "cta.book": "Book", "cta.checkAvailability": "Check availability on Airbnb",
     "cta.more": "Learn more", "cta.book.airbnb": "Book on Airbnb",
     "cta.call": "Call", "cta.email": "Email",
