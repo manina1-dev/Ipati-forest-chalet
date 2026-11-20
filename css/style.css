@@ -253,3 +253,14 @@ h3 { font-size: 1.5rem; color: var(--forest); }
 
 .btn-ghost-green { background: transparent; color: var(--forest); border-color: var(--forest); cursor: pointer; font: inherit; font-weight: 600; }
 .btn-ghost-green:hover { background: rgba(74,125,95,.08); }
+
+/* ---------- Activities ---------- */
+.act-lead { max-width: 760px; font-size: 1.08rem; }
+.act-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 30px; }
+.act-col h3 { margin-bottom: 14px; }
+.act-list { list-style: none; padding: 0; margin: 0 0 14px; }
+.act-list li { display: flex; flex-direction: column; padding: 16px 18px; margin-bottom: 12px; background: var(--cream); border-radius: var(--radius); border-left: 4px solid var(--moss); }
+.act-list b { color: var(--forest); font-weight: 600; margin-bottom: 4px; }
+.act-list span { color: var(--muted); font-size: .95rem; }
+.act-col .muted a { color: var(--forest); font-weight: 600; }
+@media (max-width: 900px) { .act-grid { grid-template-columns: 1fr; gap: 10px; } }
