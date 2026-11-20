@@ -250,3 +250,6 @@ h3 { font-size: 1.5rem; color: var(--forest); }
 .address b { font-family: var(--serif); font-size: 1.3rem; color: var(--forest); }
 .address span { color: var(--ink); }
 .address .coords { color: var(--muted); font-size: .85rem; }
+
+.btn-ghost-green { background: transparent; color: var(--forest); border-color: var(--forest); cursor: pointer; font: inherit; font-weight: 600; }
+.btn-ghost-green:hover { background: rgba(74,125,95,.08); }

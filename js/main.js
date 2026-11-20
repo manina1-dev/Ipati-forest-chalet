@@ -27,7 +27,6 @@
     "feat.ac": "Air conditioning & heating", "feat.parking": "Free parking on the property",
     "feat.more": "Also: washer & dryer, cot on request, outdoor shower, private entrance.",
     "gallery.eyebrow": "Photos", "gallery.title": "A look inside and out",
-    "gallery.more": "See all photos on Airbnb →",
     "seasons.eyebrow": "All year round", "seasons.title": "A house for every season",
     "s.spring": "Spring", "s.spring.d": "Apple and cherry trees in blossom",
     "s.summer": "Summer", "s.summer.d": "Meals in the garden, cool mountain air",
@@ -89,13 +88,28 @@
   const photos = C.photos || [];
   const grid = document.getElementById("galleryGrid");
   const cap = (p) => (lang === "en" ? p.en : p.el) || "";
+  const thumb = (p) => p.src.replace("images/gallery/", "images/gallery/thumbs/");
+  const FIRST = 16;
+  let expanded = false;
+  const moreBtn = document.getElementById("galleryMore");
+  if (moreBtn) moreBtn.addEventListener("click", () => {
+    expanded = !expanded; renderGallery();
+    if (!expanded) document.getElementById("gallery").scrollIntoView();
+  });
   function renderGallery() {
     grid.innerHTML = "";
+    if (moreBtn) {
+      moreBtn.hidden = photos.length <= FIRST;
+      moreBtn.textContent = expanded
+        ? (lang === "en" ? "Show fewer photos" : "Λιγότερες φωτογραφίες")
+        : (lang === "en" ? `Show all ${photos.length} photos` : `Δείτε όλες τις φωτογραφίες (${photos.length})`);
+    }
     photos.forEach((p, i) => {
+      if (!expanded && i >= FIRST) return;
       const b = document.createElement("button");
       b.type = "button"; b.className = "ph";
       const img = document.createElement("img");
-      img.src = p.src; img.alt = cap(p); img.loading = "lazy";
+      img.src = thumb(p); img.alt = cap(p) || "Ipati Forest Chalet"; img.loading = "lazy";
       b.appendChild(img);
       b.addEventListener("click", () => openLb(i));
       grid.appendChild(b);
@@ -108,7 +122,7 @@
   function show(i) {
     cur = (i + photos.length) % photos.length;
     lbImg.src = photos[cur].src; lbImg.alt = cap(photos[cur]);
-    lbCap.textContent = `${cap(photos[cur])} · ${cur + 1}/${photos.length}`;
+    lbCap.textContent = (cap(photos[cur]) ? cap(photos[cur]) + " · " : "") + `${cur + 1}/${photos.length}`;
   }
   function openLb(i) { show(i); lb.hidden = false; document.body.style.overflow = "hidden"; }
   function closeLb() { lb.hidden = true; document.body.style.overflow = ""; }
