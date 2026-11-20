@@ -95,8 +95,9 @@
   });
   const email = document.querySelector(".contact-email");
   if (C.email) email.href = "mailto:" + C.email; else email.remove();
-  const ig = document.querySelector(".instagram-link");
-  if (C.instagram) ig.href = C.instagram; else ig.parentElement.remove();
+  document.querySelectorAll(".instagram-link").forEach((a) => {
+    if (C.instagram) a.href = C.instagram; else a.remove();
+  });
 
   // ---------- Gallery + lightbox ----------
   const photos = C.photos || [];

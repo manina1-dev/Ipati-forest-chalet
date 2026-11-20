@@ -264,3 +264,10 @@ h3 { font-size: 1.5rem; color: var(--forest); }
 .act-list span { color: var(--muted); font-size: .95rem; }
 .act-col .muted a { color: var(--forest); font-weight: 600; }
 @media (max-width: 900px) { .act-grid { grid-template-columns: 1fr; gap: 10px; } }
+
+/* ---------- Instagram ---------- */
+.btn-instagram { background: linear-gradient(45deg, #f09433, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888); border: 0; padding: 16px 28px; color: #fff; display: inline-flex; align-items: center; gap: 8px; }
+.btn-instagram:hover { filter: brightness(1.08); background: linear-gradient(45deg, #f09433, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888); }
+.btn-instagram svg { width: 20px; height: 20px; }
+.ig-footer { display: inline-flex; align-items: center; gap: 6px; text-decoration: none; font-weight: 600; }
+.ig-footer svg { width: 18px; height: 18px; }

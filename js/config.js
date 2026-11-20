@@ -10,7 +10,7 @@ window.CHALET = {
   phone: "+30 699 444 9853",
   whatsapp: "306994449853",   // αριθμός για WhatsApp, χωρίς + και κενά (κενό "" = κρυφό)
   email: "",       // π.χ. "info@ipatichalet.gr"
-  instagram: "",   // π.χ. "https://instagram.com/ipatiforestchalet"
+  instagram: "https://www.instagram.com/ipatiforestchalet/",
 
   // Φωτογραφίες της γκαλερί: αρχεία στον φάκελο images/gallery/ (μικρές εκδοχές στο images/gallery/thumbs/).
   // Λεζάντα σε ελληνικά (el) και αγγλικά (en) προαιρετικά. Η σειρά εδώ είναι η σειρά στο site.
