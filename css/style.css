@@ -1,11 +1,11 @@
 :root {
-  --forest: #2f4a3a;
-  --forest-dark: #1e3127;
-  --moss: #6b7f5a;
-  --gold: #c9a46a;
-  --cream: #f6f1e7;
-  --paper: #fffdf8;
-  --ink: #23271f;
+  --forest: #3d6a50;
+  --forest-dark: #2f5440;
+  --moss: #7c9a66;
+  --gold: #d6ab62;
+  --cream: #f7f4ec;
+  --paper: #ffffff;
+  --ink: #2b302a;
   --muted: #6b6a62;
   --radius: 14px;
   --serif: "EB Garamond", Georgia, serif;
@@ -197,3 +197,19 @@ h3 { font-size: 1.5rem; color: var(--forest); }
   background: #25d366; color: #fff; display: grid; place-items: center; box-shadow: 0 8px 24px rgba(0,0,0,.25); transition: transform .15s; }
 .wa-float:hover { transform: scale(1.07); }
 .wa-float svg { width: 32px; height: 32px; }
+
+/* ---------- Brighter theme ---------- */
+.nav { background: rgba(255,255,255,.92); color: var(--ink); box-shadow: 0 2px 20px rgba(0,0,0,.06); }
+.brand { color: var(--forest); }
+.links a { opacity: .8; }
+.links a:hover { color: var(--forest); opacity: 1; }
+.lang { border-color: rgba(0,0,0,.18); color: var(--ink); }
+.lang:hover { border-color: var(--forest); color: var(--forest); }
+.hero-bg[style]::after { background: linear-gradient(180deg, rgba(20,32,25,.15), rgba(20,32,25,.3) 50%, rgba(20,32,25,.6)); }
+.hero h1, .hero .lead, .hero .rating { text-shadow: 0 2px 16px rgba(0,0,0,.5); }
+.book { background: #4f7d62; }
+.book-bg { opacity: 1; background-image: url("../images/valley-view.jpg"); background-position: center 40%; }
+.book-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(35,65,48,.35), rgba(35,65,48,.55)); }
+.book h2, .book p { text-shadow: 0 2px 14px rgba(0,0,0,.35); }
+.footer { background: #f2eee4; color: var(--muted); border-top: 1px solid #e6e0d2; }
+.footer a { color: var(--forest); }
