@@ -43,7 +43,8 @@
     "d.thermopyles": "Thermopylae", "d.karpenisi": "Karpenisi", "d.parnassos": "Parnassos ski centre",
     "d.delphi": "Delphi / Arachova", "d.volos": "Nea Anchialos Airport (Volos)", "d.meteora": "Meteora",
     "d.athens": "Athens Airport", "d.thess": "Thessaloniki Airport",
-    "loc.note": "The exact location is shared after booking.",
+    "loc.note": "Approximate road distances.",
+    "loc.address": "Ypati, Fthiotida 350 16, Greece", "loc.directions": "Get directions",
     "contact.title": "Ready for a getaway?",
     "contact.lead": "See available dates and book securely through Airbnb. For questions, message Georgia (Gogo) on WhatsApp or give her a call.",
   };

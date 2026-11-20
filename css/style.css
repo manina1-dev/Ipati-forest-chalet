@@ -242,3 +242,11 @@ h3 { font-size: 1.5rem; color: var(--forest); }
 .brand span { color: var(--moss); }
 .hero .eyebrow { color: #fff; opacity: .95; }
 .stars { color: #fff; }
+
+/* ---------- Address card ---------- */
+.address { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  margin-top: 14px; padding: 18px 20px; background: var(--cream); border-radius: var(--radius); }
+.address div { display: flex; flex-direction: column; }
+.address b { font-family: var(--serif); font-size: 1.3rem; color: var(--forest); }
+.address span { color: var(--ink); }
+.address .coords { color: var(--muted); font-size: .85rem; }
