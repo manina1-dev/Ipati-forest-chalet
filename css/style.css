@@ -213,3 +213,20 @@ h3 { font-size: 1.5rem; color: var(--forest); }
 .book h2, .book p { text-shadow: 0 2px 14px rgba(0,0,0,.35); }
 .footer { background: #f2eee4; color: var(--muted); border-top: 1px solid #e6e0d2; }
 .footer a { color: var(--forest); }
+
+/* ---------- Extra bright ---------- */
+:root { --forest: #4a7d5f; --cream: #faf8f3; --moss: #86a56f; }
+.hero-bg[style]::after { background: radial-gradient(ellipse 60% 55% at 50% 50%, rgba(15,25,20,.38), rgba(15,25,20,.08) 75%), linear-gradient(180deg, rgba(255,255,255,0), rgba(15,25,20,.15)); }
+.hero h1, .hero .lead, .hero .rating, .hero .eyebrow { text-shadow: 0 2px 18px rgba(0,0,0,.55), 0 0 2px rgba(0,0,0,.25); }
+.section.alt { background: var(--cream); }
+.features li, .card { background: #f6f3ec; }
+.book { background: #fff; color: var(--ink); }
+.book-bg::after { background: linear-gradient(180deg, rgba(255,255,255,.72), rgba(255,255,255,.82)); }
+.book h2 { color: var(--forest); }
+.book h2, .book p { text-shadow: none; }
+.book p { opacity: 1; }
+.book .btn-ghost { color: var(--forest); border-color: var(--forest); }
+.book .btn-ghost:hover { background: rgba(74,125,95,.08); }
+.footer { background: #faf8f3; }
+.hero-bg { filter: brightness(1.12) saturate(1.15); }
+.seasons img, .gallery img, .about-img { filter: brightness(1.05) saturate(1.08); }
