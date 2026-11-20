@@ -230,3 +230,15 @@ h3 { font-size: 1.5rem; color: var(--forest); }
 .footer { background: #faf8f3; }
 .hero-bg { filter: brightness(1.12) saturate(1.15); }
 .seasons img, .gallery img, .about-img { filter: brightness(1.05) saturate(1.08); }
+
+/* ---------- No mustard: green accents ---------- */
+.btn { background: var(--forest); border-color: var(--forest); color: #fff; }
+.btn:hover { background: #3f6e52; border-color: #3f6e52; }
+.btn-ghost { background: transparent; color: inherit; border-color: currentColor; }
+.hero .btn-ghost:hover { background: rgba(255,255,255,.15); }
+.book .btn-ghost { color: var(--forest); border-color: var(--forest); background: transparent; }
+.btn-whatsapp { background: #25d366; border-color: #25d366; }
+.btn-whatsapp:hover { background: #1ebe5b; border-color: #1ebe5b; }
+.brand span { color: var(--moss); }
+.hero .eyebrow { color: #fff; opacity: .95; }
+.stars { color: #fff; }
