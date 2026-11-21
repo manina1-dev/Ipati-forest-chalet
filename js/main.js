@@ -20,7 +20,7 @@
     "x1.t": "Breakfast above the valley", "x1.d": "The first coffee on the balcony. Mist slowly lifts from the Spercheios valley and all you hear are the birds in the chestnut trees. Mornings here are never in a hurry.",
     "x2.t": "Days in the mountains", "x2.d": "Step out of the door and onto the trail. Within minutes you're in the fir forests of Mount Oiti, beside waterfalls, or climbing up to the mountain refuge. In the afternoon, a warm soak at the Ipati thermal springs.",
     "x3.t": "The garden is yours", "x3.d": "Eleven stremmata (2.7 acres) of vines, walnut trees, a vegetable garden and chestnuts. A hammock under the trees, sunbeds with a view and ping pong under the trees.",
-    "x4.t": "Dinner under the pergola", "x4.d": "Light the barbecue, set the table in the garden and stay out until the stars come out.",
+    "x4.t": "Dinner under the pergola", "x4.d": "Set the table in the garden, cook something good and enjoy it with your company under the pergola. Stay out until the stars come out.",
     "x5.t": "Evenings by the fire", "x5.d": "When the temperature drops, the fire is lit. A glass of wine, a board game, a few notes on the piano. Outside, only the forest.",
     "x6.t": "Winter in the snow", "x6.d": "When it snows, the estate turns white and the forest falls silent. Walk among snow-covered firs, ski at Parnassos or Karpenisi, and come back to a warm house with the fire already lit. To end the day, a hot soak at the Ipati thermal springs.",
     "x7.t": "Autumn with chestnuts and walnuts", "x7.d": "The forest turns red and gold and the mist wraps around the firs. Gather chestnuts and walnuts from the trees on the estate, roast them in the fireplace and enjoy them with a warm cup of mountain tea.",
