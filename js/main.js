@@ -5,7 +5,7 @@
   const EN = {
     "nav.about": "The house", "nav.gallery": "Photos", "nav.seasons": "Seasons",
     "nav.area": "The area", "nav.contact": "Contact", "nav.book": "Book",
-    "cta.book": "Book", "cta.checkAvailability": "Check availability on Airbnb",
+    "cta.book": "Book", "cta.checkAvailability": "Check availability",
     "cta.more": "The experience", "cta.book.airbnb": "Book on Airbnb",
     "cta.call": "Call", "cta.email": "Email",
     "hero.eyebrow": "Ipati · Mount Oiti",
