@@ -1,33 +1,12 @@
-// Availability calendar, filled from data/availability.json
+// Availability calendar (display only), filled from data/availability.json
 // (updated automatically from Airbnb by .github/workflows/airbnb-calendar.yml).
 (function () {
   const root = document.getElementById("calendar");
   if (!root) return;
-  const C = window.CHALET || {};
 
   const T = {
-    el: {
-      prev: "Προηγούμενος μήνας", next: "Επόμενος μήνας",
-      pickIn: "Διαλέξτε ημερομηνία άφιξης.",
-      pickOut: "Τώρα διαλέξτε ημερομηνία αναχώρησης.",
-      nights: (n) => (n === 1 ? "1 νύχτα" : n + " νύχτες"),
-      book: "Κράτηση αυτών των ημερομηνιών στο Airbnb",
-      clear: "Καθαρισμός",
-      blocked: "Αυτές οι ημερομηνίες περιλαμβάνουν μέρες που είναι ήδη κλεισμένες. Διαλέξτε άλλη ημερομηνία αναχώρησης.",
-      updated: "Ενημερώθηκε από το Airbnb",
-      notyet: "Το ημερολόγιο συνδέεται με το Airbnb. Η τελική διαθεσιμότητα επιβεβαιώνεται πάντα στο Airbnb.",
-    },
-    en: {
-      prev: "Previous month", next: "Next month",
-      pickIn: "Choose your check-in date.",
-      pickOut: "Now choose your check-out date.",
-      nights: (n) => (n === 1 ? "1 night" : n + " nights"),
-      book: "Book these dates on Airbnb",
-      clear: "Clear",
-      blocked: "These dates include days that are already booked. Please choose another check-out date.",
-      updated: "Updated from Airbnb",
-      notyet: "The calendar is being connected to Airbnb. Final availability is always confirmed on Airbnb.",
-    },
+    el: { prev: "Προηγούμενος μήνας", next: "Επόμενος μήνας", free: "διαθέσιμο", taken: "μη διαθέσιμο" },
+    en: { prev: "Previous month", next: "Next month", free: "available", taken: "not available" },
   };
   const lang = () => (document.documentElement.lang === "en" ? "en" : "el");
   const t = () => T[lang()];
@@ -39,7 +18,6 @@
 
   let booked = new Set();   // nights that are taken (ISO dates)
   let updated = null;
-  let checkIn = null, checkOut = null, msg = "";
   let offset = 0;           // months from the current month
   const MAX_OFFSET = 11;
 
@@ -47,9 +25,10 @@
 
   function render() {
     const L = t();
-    const fmtMonth = new Intl.DateTimeFormat(lang() === "en" ? "en-GB" : "el-GR", { month: "long", year: "numeric" });
-    const fmtDay = new Intl.DateTimeFormat(lang() === "en" ? "en-GB" : "el-GR", { weekday: "short", day: "numeric", month: "short" });
-    const wd = new Intl.DateTimeFormat(lang() === "en" ? "en-GB" : "el-GR", { weekday: "narrow" });
+    const loc = lang() === "en" ? "en-GB" : "el-GR";
+    const fmtMonth = new Intl.DateTimeFormat(loc, { month: "long", year: "numeric" });
+    const fmtDay = new Intl.DateTimeFormat(loc, { weekday: "long", day: "numeric", month: "long" });
+    const wd = new Intl.DateTimeFormat(loc, { weekday: "narrow" });
     const n = months();
     let html = `<div class="cal-head">
       <button type="button" class="cal-nav" data-nav="-1" aria-label="${L.prev}" ${offset <= 0 ? "disabled" : ""}>‹</button>
@@ -64,60 +43,22 @@
       for (let i = 0; i < lead; i++) html += `<span></span>`;
       for (let d = 1; d <= days; d++) {
         const day = new Date(first.getFullYear(), first.getMonth(), d);
-        const k = iso(day);
         const past = day < today;
-        const taken = booked.has(k);
+        const taken = booked.has(iso(day));
         const cls = ["cal-day"];
         if (past) cls.push("past");
-        if (taken) cls.push("taken");
-        if (checkIn && k === iso(checkIn)) cls.push("sel", "sel-start");
-        if (checkOut && k === iso(checkOut)) cls.push("sel", "sel-end");
-        if (checkIn && checkOut && day > checkIn && day < checkOut) cls.push("in-range");
-        // A taken night can still be a check-out day (guests leave in the morning).
-        const canCheckout = checkIn && !checkOut && day > checkIn;
-        const disabled = past || (taken && !canCheckout);
-        html += `<button type="button" class="${cls.join(" ")}" data-day="${k}" ${disabled ? "disabled" : ""} aria-label="${fmtDay.format(day)}">${d}</button>`;
+        else if (taken) cls.push("taken");
+        const state = past ? "" : taken ? ` – ${L.taken}` : ` – ${L.free}`;
+        html += `<span class="${cls.join(" ")}" aria-label="${fmtDay.format(day)}${state}">${d}</span>`;
       }
       html += `</div></div>`;
     }
-    html += `</div>`;
-
-    let summary;
-    if (checkIn && checkOut) {
-      const nights = Math.round((checkOut - checkIn) / 864e5);
-      const url = new URL(C.airbnbUrl || "https://www.airbnb.gr");
-      url.searchParams.set("check_in", iso(checkIn));
-      url.searchParams.set("check_out", iso(checkOut));
-      summary = `<p class="cal-pick"><b>${fmtDay.format(checkIn)} → ${fmtDay.format(checkOut)}</b> · ${L.nights(nights)}</p>
-        <div class="cal-actions"><a class="btn" href="${url}" target="_blank" rel="noopener">${L.book}</a>
-        <button type="button" class="btn btn-ghost-green" data-clear>${L.clear}</button></div>`;
-    } else {
-      summary = `<p class="cal-pick">${msg || (checkIn ? L.pickOut : L.pickIn)}</p>` +
-        (checkIn ? `<div class="cal-actions"><button type="button" class="btn btn-ghost-green" data-clear>${L.clear}</button></div>` : "");
-    }
-    const fmtUpd = new Intl.DateTimeFormat(lang() === "en" ? "en-GB" : "el-GR", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
-    const note = updated ? `${L.updated}: ${fmtUpd.format(updated)}` : L.notyet;
-    root.innerHTML = html + `<div class="cal-foot">${summary}<p class="cal-note">${note}</p></div>`;
+    root.innerHTML = html + `</div>`;
   }
 
   root.addEventListener("click", (e) => {
     const nav = e.target.closest("[data-nav]");
-    if (nav) { offset = Math.max(0, Math.min(MAX_OFFSET, offset + Number(nav.dataset.nav))); render(); return; }
-    if (e.target.closest("[data-clear]")) { checkIn = checkOut = null; msg = ""; render(); return; }
-    const b = e.target.closest("[data-day]");
-    if (!b || b.disabled) return;
-    const day = parse(b.dataset.day);
-    msg = "";
-    if (!checkIn || checkOut || day <= checkIn) {
-      if (booked.has(iso(day))) return;
-      checkIn = day; checkOut = null;
-    } else {
-      for (let d = checkIn; d < day; d = addDays(d, 1)) {
-        if (booked.has(iso(d))) { msg = t().blocked; render(); return; }
-      }
-      checkOut = day;
-    }
-    render();
+    if (nav) { offset = Math.max(0, Math.min(MAX_OFFSET, offset + Number(nav.dataset.nav))); render(); }
   });
 
   new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });

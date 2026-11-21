@@ -366,3 +366,7 @@ body { background: #fff; }
   .cal-head { top: 16px; left: 10px; right: 10px; }
 }
 section[hidden], .links a[hidden] { display: none !important; }
+.cal-day { display: grid; place-items: center; cursor: default; }
+.cal-day:hover { background: transparent; }
+.cal-day.taken:hover { background: repeating-linear-gradient(135deg, transparent 0 5px, rgba(0,0,0,.04) 5px 7px); }
+.cal { padding-bottom: 26px; }
