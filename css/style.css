@@ -370,3 +370,8 @@ section[hidden], .links a[hidden] { display: none !important; }
 .cal-day:hover { background: transparent; }
 .cal-day.taken:hover { background: repeating-linear-gradient(135deg, transparent 0 5px, rgba(0,0,0,.04) 5px 7px); }
 .cal { padding-bottom: 26px; }
+
+.rating-link { text-decoration: none; color: inherit; }
+.rating-link:hover span:last-child { text-decoration: underline; }
+.book .also-airbnb { margin: 28px auto 0; font-size: .92rem; color: var(--muted); }
+.also-airbnb a { color: var(--forest); font-weight: 600; }

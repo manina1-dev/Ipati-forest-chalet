@@ -5,7 +5,7 @@
   const EN = {
     "nav.about": "The house", "nav.gallery": "Photos", "nav.seasons": "Seasons",
     "nav.area": "The area", "nav.contact": "Contact", "nav.book": "Book",
-    "cta.book": "Book", "cta.checkAvailability": "Check availability",
+    "cta.book": "Book", "cta.contact": "Contact", "cta.checkAvailability": "Check availability",
     "cta.more": "The experience", "cta.book.airbnb": "Book on Airbnb",
     "cta.call": "Call", "cta.email": "Email",
     "hero.eyebrow": "Ipati · Mount Oiti",
@@ -30,6 +30,7 @@
     "cal.eyebrow": "Availability", "cal.title": "When the chalet is free",
     "cal.lead": "See which days are available for your stay.",
     "cal.free": "Available", "cal.taken": "Not available",
+    "contact.alsoAirbnb": "You can also find us on Airbnb, rated 5.0 ★", "contact.viewAirbnb": "View the listing",
     "about.eyebrow": "The house", "about.title": "Wood, stone and lots of light",
     "about.p1": "The ground floor has the dining area and the living room with the fireplace, the kitchen, a bathroom and a bedroom. A French door in the kitchen opens onto a balcony overlooking the garden and the forest.",
     "about.p2": "A staircase leads upstairs to a second living room, a bathroom, two bedrooms and a wonderful view from the balcony.",
