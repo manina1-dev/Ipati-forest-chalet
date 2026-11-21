@@ -75,7 +75,7 @@
     "loc.note": "Approximate road distances.",
     "loc.address": "Ipati, Fthiotida 350 16, Greece", "loc.directions": "Get directions",
     "contact.title": "Ready for a getaway?",
-    "contact.lead": "See available dates and book securely through Airbnb. For questions, message Georgia (Gogo) on WhatsApp or give her a call.",
+    "contact.lead": "For any question, message Georgia (Gogo) on WhatsApp or give her a call.",
   };
 
   const nodes = document.querySelectorAll("[data-i18n]");
