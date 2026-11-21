@@ -226,14 +226,14 @@ h3 { font-size: 1.5rem; color: var(--forest); }
 .book h2, .book p { text-shadow: none; }
 .book p { opacity: 1; }
 .book .btn-ghost { color: var(--forest); border-color: var(--forest); }
-.book .btn-ghost:hover { background: rgba(74,125,95,.08); }
+.book .btn-ghost:hover { background: rgba(44,77,60,.08); }
 .footer { background: #faf8f3; }
 .hero-bg { filter: brightness(1.12) saturate(1.15); }
 .seasons img, .gallery img, .about-img { filter: brightness(1.05) saturate(1.08); }
 
 /* ---------- No mustard: green accents ---------- */
 .btn { background: var(--forest); border-color: var(--forest); color: #fff; }
-.btn:hover { background: #3f6e52; border-color: #3f6e52; }
+.btn:hover { background: #23402f; border-color: #23402f; }
 .btn-ghost { background: transparent; color: inherit; border-color: currentColor; }
 .hero .btn-ghost:hover { background: rgba(255,255,255,.15); }
 .book .btn-ghost { color: var(--forest); border-color: var(--forest); background: transparent; }
@@ -252,7 +252,7 @@ h3 { font-size: 1.5rem; color: var(--forest); }
 .address .coords { color: var(--muted); font-size: .85rem; }
 
 .btn-ghost-green { background: transparent; color: var(--forest); border-color: var(--forest); cursor: pointer; font: inherit; font-weight: 600; }
-.btn-ghost-green:hover { background: rgba(74,125,95,.08); }
+.btn-ghost-green:hover { background: rgba(44,77,60,.08); }
 
 /* ---------- Activities ---------- */
 .act-lead { max-width: 760px; font-size: 1.08rem; }
@@ -327,3 +327,6 @@ body { background: #fff; }
   .hero-bg, .hero-inner > * { animation: none; }
   .js .reveal { opacity: 1; transform: none; transition: none; }
 }
+
+/* ---------- Darker cypress green ---------- */
+:root { --forest: #2c4d3c; --forest-dark: #1f3a2c; --moss: #5b7a64; }

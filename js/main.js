@@ -198,6 +198,16 @@
     });
   }
   watch(document);
+  // Safety net: after fast scrolls or jumps, reveal anything already above the bottom of the screen.
+  let sweep = null;
+  window.addEventListener("scroll", () => {
+    clearTimeout(sweep);
+    sweep = setTimeout(() => {
+      document.querySelectorAll(".reveal:not(.in)").forEach((el) => {
+        if (el.getBoundingClientRect().top < window.innerHeight) { el.classList.add("in"); if (io) io.unobserve(el); }
+      });
+    }, 120);
+  }, { passive: true });
   new MutationObserver(() => watch(grid)).observe(grid, { childList: true });
 
   const heroBg = document.querySelector(".hero-bg");
