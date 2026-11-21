@@ -375,3 +375,7 @@ section[hidden], .links a[hidden] { display: none !important; }
 .rating-link:hover span:last-child { text-decoration: underline; }
 .book .also-airbnb { margin: 28px auto 0; font-size: .92rem; color: var(--muted); }
 .also-airbnb a { color: var(--forest); font-weight: 600; }
+
+.contact-email { display: inline-flex; align-items: center; gap: 8px; text-transform: none; }
+.contact-email svg { width: 20px; height: 20px; }
+@media (max-width: 560px) { .contact-email { font-size: .92rem; padding-left: 18px; padding-right: 18px; } }

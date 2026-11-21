@@ -76,7 +76,7 @@
     "loc.note": "Approximate road distances.",
     "loc.address": "Ipati, Fthiotida 350 16, Greece", "loc.directions": "Get directions",
     "contact.title": "Ready for a getaway?",
-    "contact.lead": "For any question, message Georgia (Gogo) on WhatsApp or give her a call.",
+    "contact.lead": "For any question, message Georgia (Gogo) on WhatsApp or by email, or give her a call.",
   };
 
   const nodes = document.querySelectorAll("[data-i18n]");
@@ -111,7 +111,10 @@
     a.href = "https://wa.me/" + C.whatsapp + "?text=" + encodeURIComponent(msg);
   });
   const email = document.querySelector(".contact-email");
-  if (C.email) email.href = "mailto:" + C.email; else email.remove();
+  if (C.email) {
+    email.href = "mailto:" + C.email + "?subject=" + encodeURIComponent("Ipati Forest Chalet");
+    email.querySelector(".email-addr").textContent = C.email;
+  } else email.remove();
   document.querySelectorAll(".instagram-link").forEach((a) => {
     if (C.instagram) a.href = C.instagram; else a.remove();
   });
