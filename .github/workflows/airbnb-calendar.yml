@@ -1,0 +1,41 @@
+name: Sync Airbnb calendar
+
+on:
+  schedule:
+    - cron: "17 */3 * * *"   # every 3 hours
+  workflow_dispatch:          # "Run workflow" button in the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: airbnb-calendar
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Fetch Airbnb calendar
+        env:
+          AIRBNB_ICAL_URL: ${{ secrets.AIRBNB_ICAL_URL }}
+        run: python3 scripts/sync_airbnb.py
+      - name: Commit if dates changed
+        run: |
+          if git diff --quiet -- data/availability.json; then
+            echo "No changes in booked dates."
+            exit 0
+          fi
+          # Only the timestamp changed? Skip the commit to avoid needless site rebuilds.
+          if git diff -U0 -- data/availability.json | grep '^[-+] ' | grep -vq '"updated"'; then
+            git config user.name "calendar-sync"
+            git config user.email "calendar-sync@users.noreply.github.com"
+            git add data/availability.json
+            git commit -m "Update availability from Airbnb"
+            git push
+          else
+            echo "Only the timestamp changed; not committing."
+          fi
