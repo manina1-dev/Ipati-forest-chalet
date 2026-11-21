@@ -24,6 +24,7 @@
     "x5.t": "Evenings by the fire", "x5.d": "When the temperature drops, the fire is lit. A glass of wine, a board game, a few notes on the piano. Outside, only the forest.",
     "x6.t": "Winter in the snow", "x6.d": "When it snows, the estate turns white and the forest falls silent. Walk among snow-covered firs, ski at Parnassos or Karpenisi, and come back to a warm house with the fire already lit. To end the day, a hot soak at the Ipati thermal springs.",
     "x7.t": "Autumn with chestnuts and walnuts", "x7.d": "The forest turns red and gold and the mist wraps around the firs. Gather chestnuts and walnuts from the trees on the estate, roast them in the fireplace and enjoy them with a warm cup of mountain tea.",
+    "x8.t": "Spring among the blossoms", "x8.d": "The apple and cherry trees on the estate burst into white blossom and the meadows fill with wildflowers. The air smells of spring, the waterfalls run with melted snow and the valley spreads out green below the balcony.",
     "about.eyebrow": "The house", "about.title": "Wood, stone and lots of light",
     "about.p1": "The ground floor has the dining area and the living room with the fireplace, the kitchen, a bathroom and a bedroom. A French door in the kitchen opens onto a balcony overlooking the garden and the forest.",
     "about.p2": "A staircase leads upstairs to a second living room, a bathroom, two bedrooms and a wonderful view from the balcony.",
