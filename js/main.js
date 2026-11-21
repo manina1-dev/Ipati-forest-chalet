@@ -179,4 +179,37 @@
   if (initial === "en") setLang("en"); else renderGallery();
 
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  // ---------- Reveal on scroll + hero parallax ----------
+  document.documentElement.classList.add("js");
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const io = "IntersectionObserver" in window && !reduce
+    ? new IntersectionObserver((entries) => entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      }), { rootMargin: "0px 0px -8% 0px", threshold: 0.12 })
+    : null;
+  function watch(root) {
+    const sel = ".xp-img, .xp-text, .xp-intro, .seasons figure, .card, .act-list li, .features li, .about-img, .ph, .map, .address, .stats, .section h2";
+    root.querySelectorAll(sel).forEach((el, i) => {
+      if (el.classList.contains("reveal")) return;
+      el.classList.add("reveal");
+      if (el.matches(".ph, .seasons figure, .card, .features li, .act-list li")) el.style.setProperty("--d", (i % 4) * 0.08 + "s");
+      if (io) io.observe(el); else el.classList.add("in");
+    });
+  }
+  watch(document);
+  new MutationObserver(() => watch(grid)).observe(grid, { childList: true });
+
+  const heroBg = document.querySelector(".hero-bg");
+  if (heroBg && !reduce) {
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+      if (ticking) return; ticking = true;
+      requestAnimationFrame(() => {
+        const y = Math.min(window.scrollY, window.innerHeight);
+        heroBg.style.translate = `0 ${y * 0.25}px`;
+        ticking = false;
+      });
+    }, { passive: true });
+  }
 })();
