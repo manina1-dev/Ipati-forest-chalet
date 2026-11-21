@@ -113,7 +113,6 @@
   const email = document.querySelector(".contact-email");
   if (C.email) {
     email.href = "mailto:" + C.email + "?subject=" + encodeURIComponent("Ipati Forest Chalet");
-    email.querySelector(".email-addr").textContent = C.email;
   } else email.remove();
   document.querySelectorAll(".instagram-link").forEach((a) => {
     if (C.instagram) a.href = C.instagram; else a.remove();
