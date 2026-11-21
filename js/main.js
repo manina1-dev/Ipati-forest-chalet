@@ -37,7 +37,7 @@
     "about.p3": "The house sits on an 11-stremma estate (2.7 acres / 1.1 hectares) with vines, walnut trees, vegetable garden and chestnut trees, all freely accessible to guests.",
     "feat.title": "What you'll find",
     "feat.fireplace": "Fireplace in the living room", "feat.garden": "Garden with vines, walnut & chestnut trees",
-    "feat.bbq": "BBQ & outdoor kitchen", "feat.dining": "Outdoor dining",
+    "feat.bbq": "Outdoor kitchen", "feat.dining": "Outdoor dining",
     "feat.hammock": "Hammock & sunbeds", "feat.pingpong": "Ping pong",
     "feat.piano": "Piano, books & board games",
     "feat.kitchen": "Full kitchen with dishwasher", "feat.wifi": "Wi‑Fi & workspace",
